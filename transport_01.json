@@ -1,0 +1,54 @@
+{
+  "version": 8,
+  "metadata": {"maputnik:renderer": "mlgljs"},
+  "sources": {
+    "openmaptiles": {
+      "type": "vector",
+      "url": "https://api.maptiler.com/tiles/v3-openmaptiles/tiles.json?key=a4FQuiCXJ9xqjkaq7RI2"
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {"background-color": "#d2d2d2"}
+    },
+    {
+      "id": "water",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "water",
+      "paint": {"fill-color": "#73a0d8"}
+    },
+    {
+      "id": "landcover",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "landcover",
+      "paint": {"fill-color": "#d8e0c8"}
+    },
+    {
+      "id": "boundary",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "boundary",
+      "paint": {"line-color": "#777777", "line-width": 1}
+    },
+    {
+      "id": "path",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": ["==", ["get", "class"], "path"],
+      "paint": {"line-color": "#1c1100", "line-width": 2}
+    },
+    {
+      "id": "mountain",
+      "type": "circle",
+      "source": "openmaptiles",
+      "source-layer": "mountain_peak",
+      "filter": ["all", ["==", "class", "peak"]]
+    }
+  ],
+  "id": "iujj30i"
+}
