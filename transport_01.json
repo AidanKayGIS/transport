@@ -1,54 +1,53 @@
 {
   "version": 8,
+  "name": "Empty Style",
   "metadata": {"maputnik:renderer": "mlgljs"},
   "sources": {
-    "openmaptiles": {
+    "thunderforest_transport": {
       "type": "vector",
-      "url": "https://api.maptiler.com/tiles/v3-openmaptiles/tiles.json?key=a4FQuiCXJ9xqjkaq7RI2"
+      "url": "https://tile.thunderforest.com/thunderforest.transport-v2.json?apikey=b71f7f0ba4064f5eb9e903859a9cf5c6"
     }
   },
+  "sprite": "",
+  "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
   "layers": [
     {
-      "id": "background",
-      "type": "background",
-      "paint": {"background-color": "#d2d2d2"}
-    },
-    {
-      "id": "water",
+      "id": "admin",
       "type": "fill",
-      "source": "openmaptiles",
-      "source-layer": "water",
-      "paint": {"fill-color": "#73a0d8"}
+      "source": "thunderforest_transport",
+      "source-layer": "admin",
+      "paint": {"fill-color": "rgba(210, 210, 210, 1)"}
     },
     {
-      "id": "landcover",
+      "id": "ocean",
       "type": "fill",
-      "source": "openmaptiles",
-      "source-layer": "landcover",
-      "paint": {"fill-color": "#d8e0c8"}
+      "source": "thunderforest_transport",
+      "source-layer": "ocean",
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "rgba(90, 109, 230, 1)"}
     },
     {
-      "id": "boundary",
+      "id": "building",
+      "type": "fill",
+      "source": "thunderforest_transport",
+      "source-layer": "building",
+      "paint": {"fill-color": "rgba(30, 24, 18, 1)"}
+    },
+    {
+      "id": "country-line",
       "type": "line",
-      "source": "openmaptiles",
-      "source-layer": "boundary",
-      "paint": {"line-color": "#777777", "line-width": 1}
+      "source": "thunderforest_transport",
+      "source-layer": "country-line",
+      "layout": {"visibility": "visible"},
+      "paint": {"line-color": "rgba(0, 0, 0, 1)"}
     },
     {
-      "id": "path",
+      "id": "bus-route",
       "type": "line",
-      "source": "openmaptiles",
-      "source-layer": "transportation",
-      "filter": ["==", ["get", "class"], "path"],
-      "paint": {"line-color": "#1c1100", "line-width": 2}
-    },
-    {
-      "id": "mountain",
-      "type": "circle",
-      "source": "openmaptiles",
-      "source-layer": "mountain_peak",
-      "filter": ["all", ["==", "class", "peak"]]
+      "source": "thunderforest_transport",
+      "source-layer": "bus-route",
+      "paint": {"line-color": "rgba(29, 119, 53, 1)", "line-width": 2}
     }
   ],
-  "id": "iujj30i"
+  "id": "aesx5io"
 }
